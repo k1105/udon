@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import firebase from './lib/Firebase';
+
+// 本番環境のみ計測
+if (process.env.NODE_ENV === 'production') {
+  firebase.analytics();
+}
 
 ReactDOM.render(
   <React.StrictMode>
