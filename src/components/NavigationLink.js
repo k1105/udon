@@ -1,29 +1,53 @@
+const styles = {
+  link: {
+    fontFamily: "eurostile-extended, sans-serif",
+    fontWeight: 900,
+    fontStyle: "normal",
+  },
+  listWrapper: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  listLeft: {
+    textAlign: "left",
+  },
+  listCenter: {
+    textAlign: "center",
+  },
+  listRight: {
+    textAlign: "right",
+  },
+};
+
 export const NavigationLink = () => {
   return (
     <div>
       <nav>
-        <ul>
-          <li>
+        <ul style={styles.listWrapper}>
+          <li style={styles.listLeft}>
             <a
-              href="https://github.com/k1105/udonic_algorithm/"
+              style={styles.link}
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
             >
               SKETCH
             </a>
           </li>
-          <li>
+          <li style={styles.listCenter}>
             <a
-              href="https://github.com/k1105/udonic_algorithm/"
+              style={styles.link}
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
             >
               THESIS
             </a>
           </li>
-          <li>
+          <li style={styles.listRight}>
             <a
-              href="https://github.com/k1105/udonic_algorithm/"
+              style={styles.link}
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
             >

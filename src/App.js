@@ -1,7 +1,8 @@
 import "./App.css";
 import { NavigationLink } from "./components/NavigationLink";
+import { SketchContent } from "./components/SketchContent";
 
-function App() {
+export const App = () => {
   return (
     <div className="App">
       <header className="App-header"></header>
@@ -10,37 +11,35 @@ function App() {
         <ul>
           <li>
             <div>
-              <p>2022.01.23</p>
-              <h2>Extention</h2>
-              <h1>13</h1>
+              <SketchContent title="Extention" number="13" date="2022.01.23" />
             </div>
           </li>
           <li>
             <div>
-              <p>2022.01.23</p>
-              <h2>ClickToExtend</h2>
-              <h1>25</h1>
+              <SketchContent
+                title="ClickToExtend"
+                number="25"
+                date="2022.01.23"
+              />
             </div>
           </li>
           <li>
             <div>
-              <p>2022.01.23</p>
-              <h2>SingleUdon</h2>
-              <h1>01</h1>
+              <SketchContent title="SingleUdon" number="01" date="2022.01.23" />
             </div>
           </li>
           <li>
             <div>
-              <p>2022.01.23</p>
-              <h2>MultipleUdon</h2>
-              <h1>02</h1>
+              <SketchContent
+                title="MultipleUdon"
+                number="02"
+                date="2022.01.23"
+              />
             </div>
           </li>
           <li>
             <div>
-              <p>2022.01.23</p>
-              <h2>SpriteUdon</h2>
-              <h1>25</h1>
+              <SketchContent title="SpriteUdon" number="25" date="2022.01.23" />
             </div>
           </li>
         </ul>
@@ -75,6 +74,4 @@ function App() {
       </footer>
     </div>
   );
-}
-
-export default App;
+};
