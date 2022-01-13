@@ -6,8 +6,19 @@ a {
   text-decoration: none;
 }
 
-li {
-  list-style: none;
+a:visited,
+a:link {
+  color: #ebdfd0;
+}
+
+a:hover {
+  background: #e6c3d1;
+  color: #000;
+}
+
+a:active {
+  background: #e6c3d1;
+  color: #000;
 }
 
 ul {
@@ -29,7 +40,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
