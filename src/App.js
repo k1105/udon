@@ -4,9 +4,7 @@ import { NavigationLink } from "./components/NavigationLink";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <link rel="stylesheet" href="https://use.typekit.net/gql6nvy.css" />
-      </header>
+      <header className="App-header"></header>
       <div>
         <NavigationLink />
         <ul>
