@@ -1,4 +1,10 @@
 const styles = {
+  container: {
+    marginTop: "30px",
+  },
+  hr: {
+    border: "2px solid #EBDFD0",
+  },
   link: {
     fontFamily: "eurostile-extended, sans-serif",
     fontWeight: 900,
@@ -21,7 +27,8 @@ const styles = {
 
 export const NavigationLink = () => {
   return (
-    <div>
+    <div style={styles.container}>
+      <hr style={styles.hr} />
       <nav>
         <ul style={styles.listWrapper}>
           <li style={styles.listLeft}>

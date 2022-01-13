@@ -32,6 +32,7 @@ const styles = {
   right: {
     textAlign: "right",
   },
+  hr: { border: "1px solid #EBDFD0", marginTop: 0 },
 };
 
 export const SketchContent = ({ date, title, number }) => {
@@ -46,6 +47,7 @@ export const SketchContent = ({ date, title, number }) => {
           <h1 style={styles.number}>{number}</h1>
         </div>
       </div>
+      <hr style={styles.hr} />
     </div>
   );
 };
