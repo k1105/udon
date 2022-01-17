@@ -30,6 +30,12 @@ ul {
   padding-right: 5vw;
 }
 
+@media (min-width: 1025px) {
+  .App {
+    width: 30vw;
+  }
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -41,12 +47,6 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
