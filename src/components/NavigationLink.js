@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const styles = {
   container: {
     marginTop: "30px",
@@ -32,34 +34,19 @@ export const NavigationLink = () => {
       <nav>
         <ul style={styles.listWrapper}>
           <li style={styles.listLeft}>
-            <a
-              style={styles.link}
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link style={styles.link} to="/">
               SKETCH
-            </a>
+            </Link>
           </li>
           <li style={styles.listCenter}>
-            <a
-              style={styles.link}
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link style={styles.link} to="/thesis">
               THESIS
-            </a>
+            </Link>
           </li>
           <li style={styles.listRight}>
-            <a
-              style={styles.link}
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link style={styles.link} to="/about">
               ABOUT
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
