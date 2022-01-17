@@ -1,53 +1,60 @@
-const styles = {
-  title: {
-    fontFamily: "eurostile-extended, sans-serif",
-    fontWeight: 900,
-    fontStyle: "normal",
-    color: "#EBDFD0",
-    marginBottom: "0px",
-    marginTop: "0px",
-  },
-
-  number: {
-    fontFamily: "eurostile-extended, sans-serif",
-    fontWeight: 900,
-    fontStyle: "normal",
-    color: "#EBDFD0",
-    marginBottom: "0px",
-    marginTop: "0px",
-  },
-
-  date: {
-    color: "#EBDFD0",
-    fontFamily: "eurostile, sans-serif",
-    fontWeight: 400,
-    fontStyle: "normal",
-    marginBottom: "-5px",
-    marginTop: "0px",
-  },
-  container: {
-    display: "flex",
-    justifyContent: "space-between",
-  },
-  right: {
-    textAlign: "right",
-  },
-  hr: { border: "1px solid #EBDFD0", marginTop: 0 },
-};
+import styled from "styled-components";
+import Color from "../const/Color";
 
 export const SketchContent = ({ date, title, number }) => {
   return (
     <div>
-      <div style={styles.container}>
-        <div>
-          <p style={styles.date}>{date}</p>
-          <h2 style={styles.title}>{title}</h2>
-        </div>
-        <div style={styles.right}>
-          <h1 style={styles.number}>{number}</h1>
-        </div>
-      </div>
-      <hr style={styles.hr} />
+      <SketchLink>
+        <a className="container">
+          <div>
+            <p>{date}</p>
+            <h2>{title}</h2>
+          </div>
+          <div className="right">
+            <h1>{number}</h1>
+          </div>
+        </a>
+        <hr />
+      </SketchLink>
     </div>
   );
 };
+
+const SketchLink = styled.div`
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .right {
+    text-align: right;
+  }
+  h2 {
+    font-family: eurostile-extended, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: ${Color.WHITE};
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  h1 {
+    font-family: eurostile-extended, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: ${Color.WHITE};
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  hr {
+    border: 1px solid #ebdfd0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  p {
+    color: ${Color.WHITE};
+    font-family: eurostile, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: -5px;
+    margin-top: 0px;
+  }
+`;

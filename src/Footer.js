@@ -1,13 +1,14 @@
 import { NavigationLink } from "./components/NavigationLink";
+import Color from "./const/Color";
 
 const styles = {
   title: {
-    color: "#EBDFD0",
+    color: Color.WHITE,
     marginTop: "30px",
     marginBottom: "10px",
   },
   credit: {
-    color: "#EBDFD0",
+    color: Color.WHITE,
     fontSize: "0.5rem",
     textAlign: "center",
     margin: "10px 0",
