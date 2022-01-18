@@ -1,3 +1,6 @@
+import { NavigationLink } from "./components/NavigationLink";
+import { Footer } from "./Footer";
+
 import styled from "styled-components";
 import Color from "./const/Color";
 
@@ -23,11 +26,17 @@ const styles = {
 export const About = () => {
   return (
     <div css="margin-top:100px">
-      <ContentText>
-        知人の依頼で、遺伝（いでん）的アルゴリズムを用いた形状自動生成のシステムを作っている傍ら息抜きに始めた。
-        ベジェ曲線でベジェベジェやってみたかった 目的:
-        experimentalな意味合いが強いので、ひとつ一つに明確な意義、目的は設定されていない。今後のためのアセット。
-      </ContentText>
+      <div>
+        <NavigationLink />
+        <div>
+          <ContentText>
+            知人の依頼で、遺伝（いでん）的アルゴリズムを用いた形状自動生成のシステムを作っている傍ら息抜きに始めた。
+            ベジェ曲線でベジェベジェやってみたかった 目的:
+            experimentalな意味合いが強いので、ひとつ一つに明確な意義、目的は設定されていない。今後のためのアセット。
+          </ContentText>
+        </div>
+        <Footer />
+      </div>
     </div>
   );
 };

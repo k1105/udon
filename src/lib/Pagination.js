@@ -1,27 +1,64 @@
-const styles = {
-  container: {
-    marginTop: "30px",
-    marginBottom: "50px",
-    display: "flex",
-    justifyContent: "space-between",
-  },
-  link: {
-    display: "inline-block",
-    fontFamily: "eurostile-extended, sans-serif",
-    fontWeight: 400,
-    fontStyle: "normal",
-  },
-};
+import Color from "../const/Color";
+import styled from "styled-components";
 
-export const Pagination = () => {
-  return (
-    <div style={styles.container}>
-      <a style={styles.link} href="#" target="_blank" rel="noopener noreferrer">
+export const Pagination = ({ count, setCount, prevDisable, nextDisable }) => {
+  let prev;
+  let next;
+  if (prevDisable) {
+    prev = (
+      <DisabledLink>
+        <s>&lt; Prev</s>
+      </DisabledLink>
+    );
+  } else {
+    prev = (
+      <PaginationLink onClick={() => setCount(count - 1)}>
         &lt; Prev
-      </a>
-      <a style={styles.link} href="#" target="_blank" rel="noopener noreferrer">
+      </PaginationLink>
+    );
+  }
+  if (nextDisable) {
+    next = (
+      <DisabledLink>
+        <s>Next &gt;</s>
+      </DisabledLink>
+    );
+  } else {
+    next = (
+      <PaginationLink onClick={() => setCount(count + 1)}>
         Next &gt;
-      </a>
-    </div>
+      </PaginationLink>
+    );
+  }
+
+  return (
+    <Container>
+      {prev}
+      {next}
+    </Container>
   );
 };
+
+const Container = styled.div`
+  margin-top: 30px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const PaginationLink = styled.a`
+  display: inline-block;
+  font-family: eurostile-extended, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: ${Color.WHITE};
+`;
+
+const DisabledLink = styled.p`
+  display: inline-block;
+  font-family: eurostile-extended, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: ${Color.WHITE};
+  margin: 0;
+`;
