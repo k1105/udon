@@ -1,3 +1,5 @@
+import { NavigationLink } from "./components/NavigationLink";
+import { Footer } from "./Footer";
 const styles = {
   title: {
     color: "#EBDFD0",
@@ -20,7 +22,11 @@ const styles = {
 export const Thesis = () => {
   return (
     <div>
-      <p>hoge</p>
+      <NavigationLink />
+      <div>
+        <p>hogehoge</p>
+      </div>
+      <Footer />
     </div>
   );
 };

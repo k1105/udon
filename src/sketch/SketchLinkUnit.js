@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import Color from "../const/Color";
 
-export const SketchContent = ({ date, title, number }) => {
+export const SketchLinkUnit = ({ date, title, number }) => {
   return (
     <div>
-      <SketchLink>
+      <LinkContainer>
         <a className="container">
           <div>
             <p>{date}</p>
@@ -15,15 +15,16 @@ export const SketchContent = ({ date, title, number }) => {
           </div>
         </a>
         <hr />
-      </SketchLink>
+      </LinkContainer>
     </div>
   );
 };
 
-const SketchLink = styled.div`
+const LinkContainer = styled.div`
   .container {
     display: flex;
     justify-content: space-between;
+    padding-top: 10px;
   }
   .right {
     text-align: right;
