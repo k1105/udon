@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const styles = {
   container: {
@@ -12,44 +13,52 @@ const styles = {
     fontWeight: 900,
     fontStyle: "normal",
   },
-  listWrapper: {
-    display: "flex",
-    justifyContent: "space-between",
-  },
-  listLeft: {
-    textAlign: "left",
-  },
-  listCenter: {
-    textAlign: "center",
-  },
-  listRight: {
-    textAlign: "right",
-  },
 };
 
 export const NavigationLink = () => {
   return (
     <div style={styles.container}>
       <hr style={styles.hr} />
-      <nav>
-        <ul style={styles.listWrapper}>
-          <li style={styles.listLeft}>
+      <NavigationList>
+        <ul>
+          <li className="left">
             <Link style={styles.link} to="/">
               SKETCH
             </Link>
           </li>
-          <li style={styles.listCenter}>
+          <li className="center">
             <Link style={styles.link} to="/thesis">
               THESIS
             </Link>
           </li>
-          <li style={styles.listRight}>
+          <li className="right">
             <Link style={styles.link} to="/about">
               ABOUT
             </Link>
           </li>
         </ul>
-      </nav>
+      </NavigationList>
     </div>
   );
 };
+
+const NavigationList = styled.nav`
+  li {
+    list-style: none;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .left {
+    text-align: left;
+  }
+  .center {
+    text-align: center;
+  }
+  .right {
+    text-align: right;
+  }
+`;
