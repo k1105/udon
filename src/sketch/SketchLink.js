@@ -3,6 +3,7 @@ import { SketchLinkUnit } from "./SketchLinkUnit";
 import { Pagination } from "../lib/Pagination";
 import Data from "../data.json";
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 
 const styles = {
   container: {
@@ -35,30 +36,39 @@ export const SketchLink = () => {
     }
   }, [count]);
   return (
-    <div style={styles.container}>
-      <ul>
-        {contents.map((data) => {
-          return (
-            <li>
-              <div>
-                <Link to="/13">
-                  <SketchLinkUnit
-                    title={data.title}
-                    number={data.number}
-                    date={data.date}
-                  />
-                </Link>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
-      <Pagination
-        count={count}
-        setCount={setCount}
-        prevDisable={prevDisable}
-        nextDisable={nextDisable}
-      />
+    <div>
+      <Container>
+        <ul>
+          {contents.map((data) => {
+            return (
+              <li>
+                <div>
+                  <Link to="/13">
+                    <SketchLinkUnit
+                      title={data.title}
+                      number={data.number}
+                      date={data.date}
+                    />
+                  </Link>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+        <Pagination
+          count={count}
+          setCount={setCount}
+          prevDisable={prevDisable}
+          nextDisable={nextDisable}
+        />
+      </Container>
     </div>
   );
 };
+
+const Container = styled.div`
+  margin-top: 50px;
+  li {
+    list-style: none;
+  }
+`;

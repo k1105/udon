@@ -37,6 +37,8 @@ ul {
 @media (min-width: 1025px) {
   .App {
     width: 30vw;
+    height: 100vh;
+    overflow-y: scroll;
   }
   .hide-on-mobile {
     display: block;
