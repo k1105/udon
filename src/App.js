@@ -1,11 +1,10 @@
 import "./App.css";
-import { NavigationLink } from "./components/NavigationLink";
-import { Footer } from "./Footer";
 import { SketchPage } from "./sketch/SketchPage";
 import { Thesis } from "./Thesis";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { About } from "./About";
 import { SketchContent } from "./sketch/SketchContent";
+import React from "react";
 
 export const App = () => {
   return (
@@ -16,7 +15,8 @@ export const App = () => {
             <Route path="/" element={<SketchPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/thesis" element={<Thesis />} />
-            <Route path="/13" element={<SketchContent />} />
+            <Route path="/sketch/:id" element={<SketchContent />} />
+            <Route path="/404" element={<div>THIS PAGE IS 404</div>} />
           </Routes>
         </div>
       </BrowserRouter>

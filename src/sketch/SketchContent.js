@@ -1,10 +1,23 @@
 import { SketchLink } from "./SketchLink";
 import { NavigationLink } from "../components/NavigationLink";
 import { Footer } from "../Footer";
-import { circle } from "./circle";
-import { Canvas } from "../components/Canvas";
 import styled from "styled-components";
+import { lazy, Suspense } from "react";
+import { useParams } from "react-router-dom";
+import ErrorBoundary from "../components/ErrorBoundary";
+
 export const SketchContent = () => {
+  const params = useParams();
+  let Hoge = <div></div>;
+  try {
+    if (params.id[0] == 0) {
+      Hoge = lazy(() => import("./udon/Udon" + params.id[1] + ".js"));
+    } else {
+      Hoge = lazy(() => import("./udon/Udon" + params.id + ".js"));
+    }
+  } catch (error) {
+    console.log(error);
+  }
   return (
     <div>
       <div className="hide-on-mobile">
@@ -13,7 +26,11 @@ export const SketchContent = () => {
         <Footer />
       </div>
       <CanvasContainer>
-        <Canvas sketch={circle} />
+        <Suspense fallback="loading">
+          <ErrorBoundary>
+            <Hoge />
+          </ErrorBoundary>
+        </Suspense>
       </CanvasContainer>
     </div>
   );
