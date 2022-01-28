@@ -1,4 +1,11 @@
-export const circle = (p) => {
+import { ReactP5Wrapper } from "react-p5-wrapper";
+
+const Canvas = () => {
+  return <ReactP5Wrapper sketch={sketch} />;
+};
+export default Canvas;
+
+export const sketch = (p) => {
   class Anchor {
     constructor(position, length, angle) {
       this.initPosition = position;

@@ -5,12 +5,6 @@ import Data from "../data.json";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const styles = {
-  container: {
-    marginTop: "50px",
-  },
-};
-
 export const SketchLink = () => {
   const numOfContents = 5;
   const [prevDisable, setPrevDisable] = useState(false);
@@ -43,7 +37,7 @@ export const SketchLink = () => {
             return (
               <li>
                 <div>
-                  <Link to="/13">
+                  <Link to={"/sketch/" + data.number}>
                     <SketchLinkUnit
                       title={data.title}
                       number={data.number}
